@@ -58,6 +58,25 @@ int ModifyAllowedCollisionsCommandStandardItem::type() const
 
 void ModifyAllowedCollisionsCommandStandardItem::ctor()
 {
+  switch (command->getModifyType())
+  {
+    case tesseract_environment::ModifyAllowedCollisionsType::ADD:
+    {
+      appendRow(createStandardItemString("type", "ADD"));
+      break;
+    }
+    case tesseract_environment::ModifyAllowedCollisionsType::REMOVE:
+    {
+      appendRow(createStandardItemString("type", "REMOVE"));
+      break;
+    }
+    case tesseract_environment::ModifyAllowedCollisionsType::REPLACE:
+    {
+      appendRow(createStandardItemString("type", "REPLACE"));
+      break;
+    }
+  }
+
   //  appendRow(createStandardItemString("link_name1", command->getLinkName1()));
   //  appendRow(createStandardItemString("link_name2", command->getLinkName2()));
   //  appendRow(createStandardItemString("reason", command->getReason()));
