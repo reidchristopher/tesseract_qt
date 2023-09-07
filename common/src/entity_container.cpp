@@ -22,6 +22,7 @@
  */
 #include <tesseract_qt/common/entity_container.h>
 #include <tesseract_qt/common/entity_manager.h>
+#include <mutex>
 
 namespace tesseract_gui
 {
